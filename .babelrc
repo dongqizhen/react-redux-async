@@ -1,0 +1,25 @@
+{
+    "presets": ["react", "env", "es2015", "stage-0"],
+    "env": {
+        "development": {
+            "plugins": [
+                ["react-transform", {
+                    "transforms": [{
+                        "transform": "react-transform-hmr",
+
+                        "imports": ["react"],
+
+                        "locals": ["module"]
+                    }]
+                }],["transform-object-rest-spread"]
+            ]
+        },
+        "prodution": {
+            "plugins": [
+                ["transform-runtime"],
+                ["transform-es2015-classes", { "loose": true }],
+                "transform-proto-to-assign",["transform-object-rest-spread"]
+            ]
+        }
+    }
+}
